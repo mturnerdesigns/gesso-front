@@ -1,0 +1,31 @@
+#back {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	background-color: #F4F4F7;
+	z-index: ;
+}
+
+.button.button-positive {
+	width: 75%;
+    margin-top: 50px;
+    background-color: #4981C0;
+    margin-bottom: 50px;
+}
+
+
+.authText {
+	font-size: 17px;
+	color:#797979;
+	margin-top: 50px;
+	text-align: center;
+	letter-spacing: 1.67px;
+	line-height: 30px;
+}
+
+.formSign {
+	padding:20px;
+}

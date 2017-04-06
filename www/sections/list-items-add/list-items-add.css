@@ -1,0 +1,31 @@
+#calender {    
+
+    position: absolute;
+    right: 0;
+    margin-right: 16px;
+    font-size: 20px;
+    margin-top: 7px;
+    cursor: pointer;
+}
+
+#calender:focus {    
+	color: white;
+}
+
+#itemText {
+	display: inline-block;
+}
+
+#bodyInput {
+	height: 65px;
+	margin: 20px 0px;
+}
+
+#iphoneSubmit {
+	position: absolute;
+	visibility: hidden;
+}
+
+.fullInput {
+	width: 100%;
+}

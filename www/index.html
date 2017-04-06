@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html  data-ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Gesso</title>
+
+    <!-- <link rel="manifest" href="manifest.json"> -->
+
+    <!--++++STYLESHEETS++++ -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/angular-datepicker.css">
+    <link href="sections/auth/signin/signin.css" rel="stylesheet">
+    <link href="sections/list-items/list-items.css" rel="stylesheet">
+    <link href="sections/list-items-add/list-items-add.css" rel="stylesheet">
+    <link href="sections/list/list.css" rel="stylesheet">
+    <link href="sections/auth/welcome/welcome.css" rel="stylesheet">
+    <link href="sections/resources/resources.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+  </head>
+  
+  <body>
+  
+  <div class="bar brand-color bar-header" ng-class="{'hide': noShow}">
+    <img id="logo" alt="Gesso" data-ng-src="../assets/img/gessologo.svg" href="#/">
+    <button class="button button-icon icon search pull-right"></button>
+  <!--   <button class="button button-icon icon menu pull-right"></button> -->
+   
+     <button id="demo-menu-lower-right"
+    class="mdl-button mdl-js-button top-menu" ng-class="{'hide': noShow}">
+    </button>
+  </div>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+        for="demo-menu-lower-right" ng-class="{'hide': noShow}">
+      <li class="mdl-menu__item"><img class="menuIcon" src="assets/img/resource-menu.svg" alt="resource icon">
+        <a href="#/resources">
+          Resources
+        </a>
+      </li>
+      <li class="mdl-menu__item"><a href="#/settings">Settings</a></li>
+      <li class="mdl-menu__item"><a href="#/login">Login</a></li>
+      <li class="mdl-menu__item"><a href="#/register">Register</a></li>
+      <li class="mdl-menu__item"><img class="menuIcon" src="assets/img/logout.svg" alt="logout icon">
+        <a href="#">
+          Logout
+        </a>
+      </li>
+
+    </ul>
+
+  <ion-tabs class="tabs-icon-top tabs-top" ng-class="{'hide': noShow}">
+    <ion-tab title="Lists" class="tabs-item" href="#/dash">
+    </ion-tab>
+    <ion-tab class="tabs-item" title="Projects" href="#/myproject">
+    </ion-tab>
+    <ion-tab title="Portfolio" class="tabs-item" href="#/myportfolio">
+    </ion-tab>
+  </ion-tabs>
+
+      <ion-pane ng-view>
+      
+      </ion-pane>
+
+      <!--++++ANGULAR/IONIC BUNDLE++++ -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+   <!--  cordova script (this will be a 404 during development)
+    <script src="cordova.js"></script> -->
+    
+    <!--++++ASSETS++++ -->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.min.js"></script>
+    <script src="assets/js/angular-datepicker.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+    <script src="assets/js/angular-sanitize.min.js"></script>
+    <script src="assets/js/ionic-toast.bundle.min.js"></script>
+    <script src="assets/js/ngStorage.min.js"></script>
+
+    <!-- ++++MODULES++++ -->
+    <script src="app.routes.js"></script>
+    <script src="app.core.js"></script>
+    <script src="app.services.js"></script>
+    <script src="app.js"></script>
+    
+    <!-- ++++CONTROLLERS++++ -->
+   
+    <!--=====lists=====-->
+    <script src="sections/list/ListController.js"></script>
+    <script src="sections/list-edit/ListEditController.js"></script>
+    <!--=====lists-Items=====-->
+    <script src="sections/list-items/ListItemController.js"></script>
+    <script src="sections/list-items-add/ListItemAddController.js"></script>
+    <script src="sections/list-items-edit/ListItemEditController.js"></script>
+
+     <!--=====auth=====-->
+    <script src="sections/auth/welcome/WelcomeController.js"></script>
+    <script src="sections/auth/signup/SignupController.js"></script>
+    <script src="sections/auth/signin/SigninController.js"></script>
+
+    <!--=====Resources=====-->
+    <script src="sections/resources/ResourcesController.js"></script>
+
+     <!--++++SERVICES++++ -->
+     <script src="services/token.service.js"></script>
+  </body>
+</html>

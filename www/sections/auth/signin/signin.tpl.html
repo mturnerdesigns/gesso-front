@@ -1,0 +1,27 @@
+<ion-content class="mainContent">
+<div class="list card">
+			<div class="item item-image">
+   			 <img src="../assets/img/signin.svg">
+  		</div>
+ <p class="authText">Already a member? Sign in.</p>
+	<div class="list formSign">
+	<form role="form" ng-submit="login()">
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Email</span>
+	    <input type="email" placeholder="Email" id="email" name="email" data-ng-model="user.email">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Password</span>
+	    <input type="password" placeholder="Password" id="password" name="password" data-ng-model="user.password">
+	  </label>
+	  <div ng-if="errorMessage">{{ errorMessage }}</div>
+	  <div class="edit-div">
+		  <button type="submit" class="button button-block button-positive">
+	  			ok!
+		  </button>
+	  </div>
+	</form>
+	</div>	
+</div>
+</ion-content>
+

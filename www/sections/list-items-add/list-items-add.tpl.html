@@ -1,0 +1,44 @@
+<ion-content class="has-tabs  mainContent">
+<!-- 	<form name="myForm">
+    	<label for="mySelect">Suggested Reminders:</label>
+		    <select name="mySelect" id="mySelect" value="{{ reminder.selectedOption }}"
+		      data-ng-options="reminder.body for reminder in reminders" ng-change="update(reminder)" data-ng-model="reminder.selectedOption">
+		    	<option value="" selected disabled>Check out this month's suggested reminders</option>
+		    	<option value="" data-ng-if="!reminders.length">No Reminders this month!</option>
+		    </select>
+ 	 </form>
+ -->
+<div class="list">
+	<label class="item item-input item-select">
+		<div class="input-label fullInput">
+		OAC Reminders
+		</div>
+		<select name="mySelect" id="mySelect" value="{{ reminder.selectedOption }}"
+		      data-ng-options="reminder.body for reminder in reminders" ng-change="update(reminder)" data-ng-model="reminder.selectedOption">
+		    	<option value="" selected disabled>Gettin paid!</option>
+		    	<option value="" data-ng-if="!reminders.length">No Reminders this month!</option>
+		</select>
+	</label>
+</div>
+  			<pre>{{reminder.selectedOption}}</pre>
+
+	<form ng-submit="addItem()">
+		<ion-item id="bodyInput">
+			<input id="itemText" type="text" placeholder="Title" data-ng-model="newItem[0].body" class="fullInput"><i id="calender" class="ion-calendar" ng-click="toggle()"></i>
+		</ion-item>
+	  	<datepicker data-ng-show="reminderdate" date-format="yyyy-MM-dd">
+				<input data-ng-model="newItem[0].reminder_date" type="text" class="fullInput"/>
+		</datepicker>
+		
+		<input type="submit"/>
+		<div ng-if="errorMessage">{{ errorMessage }}</div>
+	</form>
+	
+	<div id="list-card" class="card main-list">
+		  	<div class="item item-text-wrap">
+		    	<i class="icon ion-record padding" style="color:{{colors[0].color}}">
+		    	</i>
+		    	{{ list.title }}
+		  	</div>
+	</div>
+</ion-content> 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Gesso-Top-Nav" transform="translate(-291.000000, -19.000000)" fill="#FFFFFF">
+            <g id="Group">
+                <g id="search" transform="translate(291.000000, 19.000000)">
+                    <path d="M11.7685,11.78325 L11.7685,11.78325 C12.07325,11.4785 12.626,11.53625 12.873,11.78325 L17.66125,16.57125 C17.96575,16.876 17.96575,17.371 17.66125,17.67575 C17.3565,17.9805 16.80375,17.92275 16.55675,17.67575 L11.7685,12.88775 C11.46375,12.583 11.46375,12.088 11.7685,11.78325 Z" id="Fill-1"></path>
+                    <path d="M14.583,7.292 C14.583,3.26475 11.31825,0 7.292,0 C3.26475,0 0,3.26475 0,7.292 C0,11.31825 3.26475,14.583 7.292,14.583 C11.31825,14.583 14.583,11.31825 14.583,7.292 Z M13.0205,7.292 C13.0205,4.128 10.456,1.5625 7.292,1.5625 C4.128,1.5625 1.5625,4.128 1.5625,7.292 C1.5625,10.456 4.128,13.0205 7.292,13.0205 C10.456,13.0205 13.0205,10.456 13.0205,7.292 Z" id="Fill-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

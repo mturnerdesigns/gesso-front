@@ -1,0 +1,30 @@
+<ion-content>
+<div class="list card">
+	
+		<div class="item item-image">
+   			 <img src="../assets/img/signup.svg">
+  		</div>
+  <p class="authText">Sign up for Gesso today!</p>
+	<div class="list formSign">
+	<form role="form" ng-submit="register()">
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Name</span>
+	    <input type="text" placeholder="Name" id="name" name="name" data-ng-model="user.name">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Email</span>
+	    <input type="email" placeholder="Email" id="email" name="email" data-ng-model="user.email">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Password</span>
+	    <input type="text" placeholder="Password" id="password" name="password" data-ng-model="user.password">
+	  </label>
+	   <div class="edit-div">
+		  <button type="submit" class="button button-block button-positive">
+	  			Sign up!
+		  </button>
+	  </div>
+	</form>
+	</div>	
+</div>
+</ion-content>

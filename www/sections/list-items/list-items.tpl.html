@@ -1,0 +1,37 @@
+<ion-content class="has-tabs  mainContent">
+<div class="card" id="list-card-id">
+    <ul class="demo-list-icon mdl-list">
+    	<li class="mdl-list__item">
+	        <span class="mdl-list__item-primary-content">
+	       	<a class="mdl-list__item-secondary-action" href="/#dash"><i class="ion-chevron-left"></i></a>
+	        	
+	    	</span>
+	    	<span class="mdl-list__item-secondary-content list-right">
+	        	<i class="icon ion-record padding mdl-list__item-icon" style="color:{{colors[0].color}}"></i>
+     			{{list.title}}
+  			</span>
+    	</li>
+     </ul>
+</div>
+
+<ion-list data-ng-repeat="item in items">
+  <ion-checkbox 
+    ng-change="update(item)" 
+    ng-model="item.completed"
+    ng-checked="{{item.completed}}"
+    >
+  <p>{{item.body}}</p><p>{{ item.reminder_date }}</p>
+  </ion-checkbox>
+  <span class="mdl-list__item-secondary-content editables">
+      <a class="g-icon" href="#item/{{item.id}}/edit"><i class="ion-edit"></i></a>
+     <!--  <i class="ion-ios-trash g-icon g-delete" data="{{item.id}}" ng-click="deleteCard(item.id)"></i> -->
+  </span>
+</ion-list>
+
+
+ </ion-content>
+<a href="#list/{{list.id}}/add">
+<button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+  <i class="material-icons">add</i>
+</button>
+</a>

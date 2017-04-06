@@ -1,0 +1,185 @@
+/* Empty. Add your own CSS if you like */
+@charset "UTF-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200i,300,300i,400');
+
+.hide{
+	display: none;
+}
+
+.margin-left {
+	margin-left: 16px;
+}
+
+.toast_section {
+	background-color: rgba(73, 129, 192, 0.75) !important;
+}
+html {
+	height: 100%;
+	overflow:hidden;
+	margin:0;
+}
+
+body {
+	background-color: #F4F4F7;
+	font-family: "Source Sans Pro", sans-serif;
+	height:100%;
+	overflow: hidden;
+	margin: 0;
+}
+
+.mainContent {
+	margin-bottom: -40px;
+}
+
+.pane {
+	background-color:transparent;
+}
+
+#fabmini{
+	right:0;
+    position: absolute;
+    margin-right: 16px;
+    border-radius: 100%;
+    background-color: #4981C0;
+    z-index: 99;
+}
+
+.top-menu {
+	margin-right: 16px;
+    margin-top: 4px;
+    right: 0;
+    position: absolute;
+    line-height: normal;
+    background: url(../img/menu.svg)center no-repeat;
+    cursor: pointer;
+}
+/* ========================== Header Styles ========================== */
+
+.bar-header{
+box-shadow: 0 2px 7px 0 rgba(21,72,155,0.34);
+}
+
+.brand-color{
+	background-color: #A5CFFF;
+}
+
+#list-card{
+	margin: 20px 0;
+	border-radius: 0;
+	z-index: -1;
+}
+
+.button-bar .button:last-child {
+	border-radius: 0;
+}
+
+.button-bar .button:first-child {
+	border-radius: 0;
+}
+
+.bar{
+	height:56px;
+	border:none;
+}
+
+/*.bar .button, .bar button {
+	min-height: normal;
+}*/
+
+.button-bar, .button {
+	color:white;
+	align-items: center;
+	justify-content: center;
+}
+
+.button-bar .button {
+	font-size: 16px;
+}
+
+.tabs-top > .tabs, .tabs.tabs-top{
+	background-color: #A5CFFF;
+	box-shadow: 0 2px 7px 0 rgba(21,72,155,0.34);
+	border:none;
+}
+
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+	background-color: #4981C0;
+}
+
+
+.has-tabs{
+	top:108px;	
+}
+
+.search{
+	width: 20px;
+	margin-right: 53px;
+	background: url('../img/search.svg')right no-repeat;
+}
+
+.menu{
+	margin-right:16px;
+	background: url('../img/menu.svg')right no-repeat;
+	right:0;
+}
+
+.mdl-button:hover{
+	background-color: transparent;
+}
+
+#logo {
+	margin-left:16px;
+	margin-top: 10px;
+}
+
+.tabs-top > .tabs, .tabs.tabs-top{
+	top:55px;
+}
+
+.tabs-striped .tabs{
+	background-color: #A5CFFF;
+	box-shadow: 0 2px 7px 0 rgba(21,72,155,0.34);
+	border:none;
+}
+
+.tabs-top.tabs-striped .tab-item.tab-item-active, 
+.tabs-top.tabs-striped .tab-item.active, .tabs-top.tabs-striped .tab-item.activated{
+	border:none;
+
+}
+
+.tabs-icon-top > .tabs .tab-item, 
+.tabs-icon-top.tabs .tab-item, 
+.tabs-icon-bottom > .tabs .tab-item, 
+.tabs-icon-bottom.tabs .tab-item {
+	font-size: 16px;
+	line-height: inherit;
+	margin: 0;
+	color: white;
+}
+
+
+/*------------List update--------------*/
+
+.update-but {
+	width:50% !important;
+	margin-top:10px !important;
+	margin-left:0%;
+	margin: 20px; 
+}
+
+.edit-div {
+	display: flex;
+	justify-content: center;
+}
+
+.list-card-edit {
+	background-color: #fafafa;
+	width: 100%;
+	padding:10px !important;
+}
+
+.item {
+	width:100%;
+}

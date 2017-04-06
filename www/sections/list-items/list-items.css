@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.list
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.mdl-list__item-icon, .mdl-list__item-icon.material-icons {
+	height: inherit;
+}
+
+.mdl-list__item .list-right {
+	flex-direction: row;
+	position: absolute;
+	right: 0;
+	margin-right:16px;
+	align-items: center;
+	font-size: 14px;
+}
+
+.mdl-list__item i {
+	margin-left:10px;
+	color: #797979;
+}
+
+#list-card-id {
+	height: 65px;
+	display: flex;
+	align-items: center;
+	margin: 20px 0px;
+}
+
+.mdl-list__item--two-line {
+	padding-left: 0px;
+}
+
+#whiteBot {
+	background-color: white;
+}
+
+#fab{
+	right:0;
+	bottom:0;
+    position: absolute;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border-radius: 100%;
+    background-color: #4981C0;
+}

@@ -1,4 +1,5 @@
 <ion-content class="has-tabs  mainContent">
+<p class="catName">suggested reminders:</p>
 <div class="list" id="sug-reminders">
 	<label class="item item-input item-select">
 		<div class="input-label fullInput">
@@ -20,22 +21,25 @@
   	<datepicker data-ng-show="reminderdate" date-format="yyyy-MM-dd">
 			<input data-ng-model="newItem[0].reminder_date" type="text" class="fullInput datePick" placeholder="Add a reminder date" />
 	</datepicker>
-
 	<div class="hasErrors"><i class="ion-android-hand" ng-if="errorMessage.body[0]" ></i> {{ errorMessage.body[0] }}</div>
 	
+	
 	<!-- <input type="submit"/> -->
-	<div class="edit-div">
+	<div class="edit-div date-add">
+	<button class="button button-positive update-but" ng-click="cancel()">
+	 			 <i class="ion-android-hand"></i> Cancel
+	</button>
 	<button type="submit" class="button button-positive update-but">
 	 			 <i class="ion-checkmark"></i> Add 
 	</button>
 	</div>
 </form>
-
-	<div id="list-card" class="card main-list">
+<p class="catName">Adding Item To:</p>
+<div id="list-card" class="card main-list">
 		  	<div class="item item-text-wrap">
 		    	<i class="icon ion-record padding" style="color:{{colors[0].color}}">
 		    	</i>
 		    	{{ list.title }}
 		  	</div>
-	</div>
+</div>
 </ion-content> 

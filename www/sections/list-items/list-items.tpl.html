@@ -15,14 +15,15 @@
 </div>
 
 <ion-list data-ng-repeat="item in items">
-  <ion-checkbox 
+  <ion-checkbox id="list-check" 
     ng-change="update(item)" 
     ng-model="item.completed"
     ng-checked="{{item.completed}}"
     >
-  <p>{{item.body}}</p><p>{{ item.reminder_date }}</p>
+  <h3 class="list-item-h3">{{item.body}}</h3>
+  <span class="list-item-date">{{ item.reminder_date }}</span>
   </ion-checkbox>
-  <span class="mdl-list__item-secondary-content editables">
+  <span class="edit-icon-list-item">
       <a class="g-icon" href="#item/{{item.id}}/edit"><i class="ion-edit"></i></a>
      <!--  <i class="ion-ios-trash g-icon g-delete" data="{{item.id}}" ng-click="deleteCard(item.id)"></i> -->
   </span>

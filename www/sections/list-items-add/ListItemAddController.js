@@ -22,11 +22,10 @@ angular
           { headers: {'X-Requested-With': 'XMLHttpRequest'}})
           .success(function (response) {
             console.log(response);
-            $route.reload();
+            $scope.errorMessage = response;
           })
           .error(function (response) {
             console.log(response);
-            $scope.errorMessage = response.body[0];
           });
         };
 

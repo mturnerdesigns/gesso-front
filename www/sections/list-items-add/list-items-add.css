@@ -49,6 +49,7 @@
 .hasErrors {
 	text-align: center;
 	color:red;
+	margin-top: 70px;
 }
 
 .hasErrors i {
@@ -58,4 +59,8 @@
 
 .datePick {
 	padding-top: 20px;
+}
+
+.date-add {
+	margin-top:60px; 
 }

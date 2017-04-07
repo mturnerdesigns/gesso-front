@@ -76,12 +76,15 @@
 	color:#4D4D4D;
 	font-weight: 400;
 	padding: 0px;
+	letter-spacing: 1.37px;
 }
 
 .list-item-date {
 	font-size: 14px;
 	color:#797979;
 	font-style: italic;
+	letter-spacing: 1.08px;
+	line-height: 18px;
 }
 
 #list-check {
@@ -92,4 +95,10 @@
 .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
 	background-color:#4981C0;
 	border-color:#4981C0;
+}
+
+.list-title {
+	font-size: 14px;
+    color: #4d4d4d;
+    letter-spacing: 1.57px;
 }

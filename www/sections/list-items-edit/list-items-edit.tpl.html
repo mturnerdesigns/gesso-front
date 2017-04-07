@@ -9,15 +9,15 @@
 	<div role="form" class="card main-list list-card">
 		<div class="item item-text-wrap">
 	    	<datepicker date-format="yyyy-MM-dd">
-				<input data-ng-model="items.reminder_date" type="text" class="fullInput list-card-edit"/><p ng-if"{{!items.reminder_date}}"><i>no current reminder set, lets set one now!</i></p>
+				<input data-ng-model="items.reminder_date" type="text" placeholder="Set Reminder Date" class="fullInput list-card-edit"/><p ng-if="!items.reminder_date"><i>no current reminder set, lets set one now!</i></p>
 			</datepicker>
 	  	</div>
 	</div>
 	<div class="edit-div">
-		<button class="button button-positive update-but" data-ng-click="updateListItems()">
+		<button class="button button-positive update-but" data-ng-click="updateListItems(items)">
 	 			 <i class="ion-checkmark"></i> Update
 		</button>
-		<button class="button button-positive update-but" data-ng-click="deleteCardItems()">
+		<button class="button button-positive update-but" data-ng-click="deleteCardItems(items)">
 	 			 <i class="ion-ios-trash"></i> Delete
 		</button>
 	</div>

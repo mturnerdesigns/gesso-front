@@ -29,3 +29,33 @@
 .fullInput {
 	width: 100%;
 }
+
+.item-select select {
+	max-width: 66%;
+}
+
+.item-select i {
+	color:#4981C0;
+}
+
+#sug-reminders {
+	margin-top:20px;
+}
+
+.item i {
+	color:#4981C0;
+}
+
+.hasErrors {
+	text-align: center;
+	color:red;
+}
+
+.hasErrors i {
+	font-size:16px;
+	margin-right: 5px;
+}
+
+.datePick {
+	padding-top: 20px;
+}

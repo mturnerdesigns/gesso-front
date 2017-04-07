@@ -1,7 +1,7 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ListItemAddController', function($scope, $http, $routeParams, $rootScope, $route) {
+    .controller('ListItemAddController', function($scope, $http, $routeParams, $rootScope, $route, $location) {
     	$rootScope.noShow = false;
 		$http.get('http://gesso-back.dev/api/cards/'+$routeParams.id+'/details').then(function(data){
 		//console.log(data.data);
@@ -39,7 +39,9 @@ angular
           $scope.newItem.push({'body':reminder.selectedOption.body, 'reminder_date': reminder.selectedOption.reminder_date});
           console.log($scope.newItem);
         }
-
+        $scope.cancel = function(){
+          $location.path('/list/'+$routeParams.id);
+        }
 	});    	
 
 });

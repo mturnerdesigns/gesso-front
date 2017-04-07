@@ -21,4 +21,9 @@ angular
 
       });
   };
+
+  $scope.logout = function(){
+    delete $window.localStorage.token;
+    $location.path('/');
+  }
 }); 

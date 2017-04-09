@@ -42,6 +42,14 @@ function config($routeProvider, $httpProvider) {
             templateUrl: 'sections/resources/resources.tpl.html',
             controller: 'ResourcesController'
         })
+        .when('/projects', {
+            templateUrl: 'sections/projects/projects/projects.tpl.html',
+            controller: 'ProjectsController'
+        })
+        .when('/projects/:id/edit', {
+            templateUrl: 'sections/projects/projects-edit/projects-edit.tpl.html',
+            controller: 'ProjectsEditController'
+        })
         .otherwise({
             redirect: '/'
         });

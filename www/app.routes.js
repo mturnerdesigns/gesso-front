@@ -50,6 +50,10 @@ function config($routeProvider, $httpProvider) {
             templateUrl: 'sections/projects/projects-edit/projects-edit.tpl.html',
             controller: 'ProjectsEditController'
         })
+        .when('/projects/:id/photos', {
+            templateUrl: 'sections/projects/projects-photos/projects-photos.tpl.html',
+            controller: 'ProjectsPhotosController'
+        })
         .otherwise({
             redirect: '/'
         });

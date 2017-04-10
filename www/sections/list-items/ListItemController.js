@@ -4,7 +4,7 @@ angular
     .controller('ListItemController',  function($scope, $http, $routeParams, $rootScope, $route, ionicToast) {
     	$rootScope.noShow = false;
 		$http.get('http://gesso-back.dev/api/cards/'+$routeParams.id+'/details').then(function(data){
-		console.log(data.data.item);
+		console.log(data.data);
 		$scope.items = data.data.item;
 		$scope.list = data.data;
 		

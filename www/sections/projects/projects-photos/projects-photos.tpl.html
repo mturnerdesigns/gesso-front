@@ -1,7 +1,27 @@
 <ion-content class="mainContent has-tabs container">
+<div class="card" id="list-card-id">
+    <ul class="demo-list-icon mdl-list">
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            <a class="mdl-list__item-secondary-action" href="/#projects"><i class="ion-chevron-left"></i></a>
+                
+            </span>
+            <span class="mdl-list__item-secondary-content list-right">
+                <i class="icon ion-record padding mdl-list__item-icon" style="color:{{colors[0].color}}"></i>
+                  <span class="list-title">{{ project.name }}</span>
+            </span>
+        </li>
+     </ul>
+</div>
+
 
     <div class="col col-50" ng-repeat="project in projectPhotos" style="float:left;">
-        <img ng-src="{{ project.thumbnail_uri }}" style="width:100%;">  
+        <a href="/#photo/{{ project.id }}/details"><img ng-src="{{ project.thumbnail_uri }}" class="thumbStyle" alt="reference photos"></a> 
     </div>
 
 </ion-content>
+    <a href="#project/{{projectPhotos.id}}/add">
+        <button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+    </a>

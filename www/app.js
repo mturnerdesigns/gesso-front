@@ -30,11 +30,9 @@ angular
       StatusBar.styleDefault();
     }
   });
-
   
 })
 
 .config(function($ionicConfigProvider) {
   $ionicConfigProvider.views.maxCache(0);
-});
-
+})

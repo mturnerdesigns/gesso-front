@@ -21,15 +21,19 @@ function config($stateProvider, $urlRouterProvider) {
             templateUrl:'sections/auth/signup/signup.tpl.html',
             controller: 'SignupController'
         })
-        .state('resources', {
-            url:'/resources',
-            templateUrl: 'sections/resources/resources.tpl.html',
-            controller: 'ResourcesController'
-        })
         .state('tab', {
             url:'/tab',
             abstract:true,
             templateUrl:'sections/template.html' 
+        })
+        .state('tab.resources', {
+            url:'/resources',
+            views: {
+                'resource-tab': {
+                    templateUrl: 'sections/resources/resources.tpl.html',
+                    controller: 'ResourcesController'
+                }
+            }
         })
         .state('tab.dash', {
             url:'/dash',

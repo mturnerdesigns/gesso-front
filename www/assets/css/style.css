@@ -3,6 +3,10 @@
 /* CSS Document */
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200i,300,300i,400');
 
+.has-tabs-top {
+	top:0px;
+}
+
 .hide{
 	display: none;
 }
@@ -28,12 +32,16 @@ body {
 	margin: 0;
 }
 
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
+	background-color: #F4F4F7;
+}
+
 .mainContent {
 	margin-bottom: -40px;
 }
 
 .pane {
-	background-color:transparent;
+	background-color:#F4F4F7;
 }
 
 #fabmini{

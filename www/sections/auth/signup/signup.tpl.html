@@ -11,14 +11,17 @@
 	    <span class="input-label">Name</span>
 	    <input type="text" placeholder="Name" id="name" name="name" data-ng-model="user.name">
 	  </label>
+	  <label class="hasErrors" ng-if="errorMessage">{{ errorMessage.name[0] }}</label> 
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Email</span>
 	    <input type="email" placeholder="Email" id="email" name="email" data-ng-model="user.email">
 	  </label>
+	  <label class="hasErrors" ng-if="errorMessage">{{ errorMessage.email[0] }}</label>
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Password</span>
 	    <input type="text" placeholder="Password" id="password" name="password" data-ng-model="user.password">
 	  </label>
+	  <label class="hasErrors" ng-if="errorMessage">{{ errorMessage.password[0] }}</label>
 	   <div class="edit-div home">
 		  <button type="submit" class="button button-block button-positive">
 	  			Sign up!

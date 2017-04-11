@@ -19,6 +19,7 @@
 		    	<i class="icon ion-record padding" style="color:{{colors[$index].color}}">
 		    	</i>
 		    	<input type="text" placeholder="New List Name" id="list" name="list" data-ng-model="newList.title">
+		    	<label class="hasErrors" ng-if="errorMessage">{{ errorMessage.title[0] }}</label> 
 		  	</div>
 		  	<button id="fabmini" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"
 		  	data-ng-click="addList()">

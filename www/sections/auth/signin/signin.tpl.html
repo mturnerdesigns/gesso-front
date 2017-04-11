@@ -10,18 +10,19 @@
 	    <span class="input-label">Email</span>
 	    <input type="email" placeholder="Email" id="email" name="email" data-ng-model="user.email">
 	  </label>
+		<span class="hasErrors" ng-if="errorMessage">{{ errorMessage.error.email[0] }}</span>
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Password</span>
 	    <input type="password" placeholder="Password" id="password" name="password" data-ng-model="user.password">
 	  </label>
-	  <div ng-if="errorMessage">{{ errorMessage }}</div>
+	   	<span class="hasErrors" ng-if="errorMessage">{{ errorMessage.error.password[0] }}</span>
+	  	<!-- <span class="hasErrors" ng-if="invalidMessage">{{ invalidMessage }}</span> -->
 	  <div class="edit-div home">
 		  <button type="submit" class="button button-block button-positive">
 	  			ok!
 		  </button>
 		  <a class="optionText" href="/#register">not a member? register!</a>
 	  </div>
-
 	</form>
 	</div>	
 </div>

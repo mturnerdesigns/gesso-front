@@ -108,55 +108,23 @@ function config($stateProvider, $urlRouterProvider) {
             }
         })
         .state('tab.projects-photos-details', {
-            url:'/photo/:id/details',
+            url:'/photo/:id/details', //should change route to say /projects/photo/:id/details
             views: {
                 'project-tab':{
                    templateUrl: 'sections/projects/projects-photos-details/projects-photos-details.tpl.html',
                    controller: 'ProjectsPhotosDetailsController'
                 }
             }
+        })
+        .state('tab.projects-photos-add', {
+            url:'/projects/:id/add',
+            views: {
+                'project-tab':{
+                   templateUrl: 'sections/projects/projects-photos-add/projects-photos-add.tpl.html',
+                   controller: 'ProjectsPhotosAddController'
+                }
+            }
         });
-//projects add next
-        // .when('/list/:id/edit', {
-        //     templateUrl: 'sections/list-edit/list-edit.tpl.html', DONE
-        //     controller: 'ListEditController'
-        // })
-        // .when('/list/:id', {
-        //     templateUrl: 'sections/list-items/list-items.tpl.html',  DONE
-        //     controller: 'ListItemController'
-        // })
-        // .when('/list/:id/add', {
-        //     templateUrl: 'sections/list-items-add/list-items-add.tpl.html', DONE
-        //     controller: 'ListItemAddController'
-        // })
-        // .when('/item/:id/edit', {
-        //     templateUrl: 'sections/list-items-edit/list-items-edit.tpl.html', DONE
-        //     controller: 'ListItemEditController'
-        // })
-        // .when('/resources', {
-        //     templateUrl: 'sections/resources/resources.tpl.html', DONE
-        //     controller: 'ResourcesController'
-        // })
-        // .when('/projects', {
-        //     templateUrl: 'sections/projects/projects/projects.tpl.html', DONE
-        //     controller: 'ProjectsController'
-        // })
-        // .when('/projects/:id/edit', {
-        //     templateUrl: 'sections/projects/projects-edit/projects-edit.tpl.html', DONE
-        //     controller: 'ProjectsEditController'
-        // })
-        // .when('/projects/:id/photos', {
-        //     templateUrl: 'sections/projects/projects-photos/projects-photos.tpl.html', DONE
-        //     controller: 'ProjectsPhotosController'
-        // })
-        // .when('/photo/:id/details', {
-        //     templateUrl: 'sections/projects/projects-photos-details/projects-photos-details.tpl.html', DONE
-        //     controller: 'ProjectsPhotosDetailsController'
-        // })
-        // .otherwise({
-        //     redirect: '/'
-        // });
-        $urlRouterProvider.otherwise('/login');
-
+        $urlRouterProvider.otherwise('/');
 }
 

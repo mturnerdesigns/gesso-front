@@ -1,7 +1,7 @@
 'use strict';
 angular
     .module('app.core', ['ngSanitize'])
-    .controller('ListController', function($scope, $state, $http, $window, $rootScope, $location, ionicToast) {
+    .controller('ListController', function($scope, $state, $stateParams, $http, $window, $rootScope, $location, ionicToast) {
       $rootScope.noShow = false;
       $http.get('http://gesso-back.dev/api/cards')
     	.success(function(data){
@@ -17,15 +17,14 @@ angular
         $scope.addList = function() {
             $http.post('http://gesso-back.dev/api/card/post', $scope.newList,
             { headers: {'X-Requested-With': 'XMLHttpRequest'}})
-            .success(function (response) {
-              console.log(response);
-              $state.reload();
-            })
-            .error(function (response) {
-              console.log(response);
+            .success(function(response){
+              if(response.status == 422)
+               { 
+                $scope.errorMessage = response.error;
+               } else {
+                $state.reload();
+               }
             });
           };
     });     
 });
-
-  

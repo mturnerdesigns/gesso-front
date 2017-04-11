@@ -1,7 +1,7 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ListItemAddController', function($scope, $http, $stateParams, $rootScope, $route, $location) {
+    .controller('ListItemAddController', function($scope, $http, $stateParams, $rootScope, $route, $location, ionicToast) {
     	$rootScope.noShow = false;
 		$http.get('http://gesso-back.dev/api/cards/'+$stateParams.id+'/details').then(function(data){
 		//console.log(data.data);
@@ -22,11 +22,12 @@ angular
           { headers: {'X-Requested-With': 'XMLHttpRequest'}})
           .success(function (response) {
             console.log(response);
-            $location.path('/tab/list/'+$stateParams.id);
-            $scope.errorMessage = response;
-          })
-          .error(function (response) {
-            console.log(response);
+            if(response.status == 400){
+               $scope.errorMessage = response.error;
+            } else {
+              $scope.showToast = ionicToast.show(response.message, 'bottom', false, 2500);
+              $location.path('/tab/list/'+$stateParams.id);
+            }
           });
         };
 

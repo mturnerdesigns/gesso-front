@@ -6,14 +6,15 @@ angular
   		$http.get('http://gesso-back.dev/api/photos/'+$stateParams.id).then(function(data){
   			console.log(data.data);
   			$scope.photoDetails = data.data[0];
+        var photoProject = data.data[0].project_id;
 
   			$scope.delete = function(){
   				$http.delete('http://gesso-back.dev/api/photos/'+$stateParams.id+'/delete',
   				 $scope.photoDetails, { headers: {'X-Requested-With': 'XMLHttpRequest'}})
   					.success(function (response) {
             		console.log(response);
+                $location.path('/tab/projects/'+photoProject+'/photos');
             		$scope.showToast = ionicToast.show(response.message, 'bottom', false, 2500);
-            		$location.path('/projects');
           		})
 	          		.error(function (response) {
 	            	console.log(response);

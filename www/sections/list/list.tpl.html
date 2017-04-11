@@ -1,30 +1,32 @@
- <ion-content class="has-tabs mainContent">
-	<div class="card main-list list-card" data-ng-repeat="list in lists">
-		<ul class="demo-list-two mdl-list">
-		  	<li class="mdl-list__item mdl-list__item--two-line">
-			    <span class="mdl-list__item-primary-content">
-			      	<i class="icon ion-record padding mdl-list__item-icon" style="color:{{colors[$index].color}}"></i>
-			     		<a href="#list/{{list.id}}">{{ list.title }}</a>
-			      	<span id="countText" class="mdl-list__item-sub-title">{{ list.item_count[0].count }} <span data-ng-if="!list.item_count[0].count">no </span>items</span>
-			    </span>
-			    <span class="mdl-list__item-secondary-content editables">
-			      	<a class="g-icon" href="#list/{{list.id}}/edit"><i class="ion-edit g-edit"></i></a>
-			      <p>{{ showToast }}</p>
-			    </span>
-		    </li>
-	    </ul>
-    </div>
-	<div role="form" class="card main-list list-card">
-	  	<div class="item item-text-wrap">
-	    	<i class="icon ion-record padding" style="color:{{colors[$index].color}}">
-	    	</i>
-	    	<input type="text" placeholder="New List Name" id="list" name="list" data-ng-model="newList.title">
-	  	</div>
-	  	<button id="fabmini" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"
-	  	data-ng-click="addList()">
-			<i class="material-icons">add</i>
-		</button>
-	</div>
- </ion-content>
+ <ion-view class="has-tabs">
+ 	<ion-content>
+		<div class="card main-list list-card" data-ng-repeat="list in lists">
+			<ul class="demo-list-two mdl-list">
+			  	<li class="mdl-list__item mdl-list__item--two-line">
+				    <span class="mdl-list__item-primary-content">
+				      	<i class="icon ion-record padding mdl-list__item-icon" style="color:{{colors[$index].color}}"></i>
+				     		<a href="#/tab/list/{{list.id}}">{{ list.title }}</a>
+				      	<span id="countText" class="mdl-list__item-sub-title">{{ list.item_count[0].count }} <span data-ng-if="!list.item_count[0].count">no </span>items</span>
+				    </span>
+				    <span class="mdl-list__item-secondary-content editables">
+				      	<a class="g-icon" href="#/tab/list/{{list.id}}/edit"><i class="ion-edit g-edit"></i></a>
+				      <p>{{ showToast }}</p>
+				    </span>
+			    </li>
+		    </ul>
+	    </div>
+		<div role="form" class="card main-list list-card">
+		  	<div class="item item-text-wrap">
+		    	<i class="icon ion-record padding" style="color:{{colors[$index].color}}">
+		    	</i>
+		    	<input type="text" placeholder="New List Name" id="list" name="list" data-ng-model="newList.title">
+		  	</div>
+		  	<button id="fabmini" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"
+		  	data-ng-click="addList()">
+				<i class="material-icons">add</i>
+			</button>
+		</div>
+	</ion-content>
+ </ion-view>
 
 

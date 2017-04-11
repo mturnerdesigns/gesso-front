@@ -1,9 +1,8 @@
 'use strict';
 angular
-    .module('app.core', ['ngSanitize', 'ngRoute'])
-    .controller('ListController', function($scope, $http, $route, $rootScope, $location, ionicToast) {
+    .module('app.core', ['ngSanitize'])
+    .controller('ListController', function($scope, $state, $http, $window, $rootScope, $location, ionicToast) {
       $rootScope.noShow = false;
-    	
       $http.get('http://gesso-back.dev/api/cards')
     	.success(function(data){
         console.log(data.cards);
@@ -20,25 +19,12 @@ angular
             { headers: {'X-Requested-With': 'XMLHttpRequest'}})
             .success(function (response) {
               console.log(response);
-              $route.reload();
+              $state.reload();
             })
             .error(function (response) {
               console.log(response);
             });
           };
-
-        // $scope.deleteCard = function(id) {
-        //   $http.delete('http://gesso-back.dev/api/card/'+id+'/delete', $scope.list,
-        //    { headers: {'X-Requested-With': 'XMLHttpRequest'}})
-        //    .success(function (response) {
-        //       console.log(response);
-        //       $scope.showToast = ionicToast.show(response.message, 'bottom', false, 2500);
-        //       $route.reload('/dash');
-        //     })
-        //     .error(function (response) {
-        //       console.log(response);
-        //     });
-        // };
     });     
 });
 

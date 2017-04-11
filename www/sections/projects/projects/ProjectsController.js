@@ -1,7 +1,7 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ProjectsController', function($scope, $http, $routeParams, $rootScope, $route, ionicToast, $location) {
+    .controller('ProjectsController', function($scope, $http, $stateParams, $rootScope, $state, ionicToast, $location) {
     	$rootScope.noShow = false;
     	$http.get('http://gesso-back.dev/api/projects').then(function(data){
 		console.log(data.data.projects);
@@ -18,7 +18,7 @@ angular
       		{ headers: {'X-Requested-With': 'XMLHttpRequest'}})
       		.success(function(response){
       			console.log(response);
-      			$route.reload();
+      			$state.reload();
       		})
       		.error(function(response){
       			console.log(response);

@@ -1,0 +1,23 @@
+<ion-content class="mainContent has-tabs">
+<div class="card">
+  <div class="item item-text-wrap">
+    <img ng-src="{{ photoDetails.original_uri }}" style="width:100%;" ng-click="openfullscreen({{ photoDetails.original_uri }})">
+  </div>
+</div>
+    <div class="edit-div date-add">
+    <button class="button button-positive update-but" ng-click="delete()">
+                 <i class="ion-ios-trash"></i> Delete
+    </button>
+    <!-- <button type="submit" class="button button-positive update-but">
+                 <i class="ion-folder"></i> Move 
+    </button> -->
+    </div>
+</ion-content>
+
+<script id="fullscreen.html" type="text/ng-template">
+    <div class="modal" ng-click="closefullscreen()">
+    <ion-content>
+    <img src="{{ photoDetails.original_uri }}" id="fullPhoto"/>
+    </ion-content>
+    </div>
+</script>

@@ -1,7 +1,8 @@
 <ion-content class="mainContent has-tabs">
 <div class="card">
   <div class="item item-text-wrap">
-    <img ng-src="{{ photoDetails.original_uri }}" style="width:100%;" ng-click="openfullscreen({{ photoDetails.original_uri }})">
+    <img id="full" ng-src="http://gesso-back.dev{{ photoDetails.original_uri }}" style="width:100%;" 
+    ng-click="openfullscreen()">
   </div>
 </div>
     <div class="edit-div date-add">
@@ -17,7 +18,7 @@
 <script id="fullscreen.html" type="text/ng-template">
     <div class="modal" ng-click="closefullscreen()">
     <ion-content>
-    <img src="{{ photoDetails.original_uri }}" id="fullPhoto"/>
+    <img ng-src="http://gesso-back.dev{{ photoDetails.original_uri }}" id="fullPhoto"/>
     </ion-content>
     </div>
 </script>

@@ -3,7 +3,8 @@ angular
       'ionic',
       'app.core', 
       'app.routes', 
-      'app.services', 
+      'app.services',
+      'ui.router',
       'ngRoute',
       'ngSanitize', 
       'ngStorage',
@@ -13,7 +14,6 @@ angular
 
 
 .run(function($ionicPlatform,$rootScope, $location) {
-
 
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -33,3 +33,8 @@ angular
 
   
 })
+
+.config(function($ionicConfigProvider) {
+  $ionicConfigProvider.views.maxCache(0);
+});
+

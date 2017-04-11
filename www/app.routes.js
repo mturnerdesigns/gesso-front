@@ -54,6 +54,10 @@ function config($routeProvider, $httpProvider) {
             templateUrl: 'sections/projects/projects-photos/projects-photos.tpl.html',
             controller: 'ProjectsPhotosController'
         })
+        .when('/photo/:id/details', {
+            templateUrl: 'sections/projects/projects-photos-details/projects-photos-details.tpl.html',
+            controller: 'ProjectsPhotosDetailsController'
+        })
         .otherwise({
             redirect: '/'
         });

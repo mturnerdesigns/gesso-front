@@ -36,7 +36,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect " ng-class="{'hide': noShow}"
         for="demo-menu-lower-right">
       <li class="mdl-menu__item"><img class="menuIcon" src="assets/img/resource-menu.svg" alt="resource icon">
-        <a href="#/resources">
+        <a href="#/tab/resources"">
           Resources
         </a>
       </li>
@@ -45,9 +45,10 @@
       <li class="mdl-menu__item"><a href="#/register">Register</a></li>
       <li class="mdl-menu__item" ng-controller="SigninController" ng-click="logout()"><img class="menuIcon" src="assets/img/logout.svg" alt="logout icon">Logout
       </li>
-
     </ul>
-    <ion-nav-view></ion-nav-view>
+    
+    <ion-nav-view>
+    </ion-nav-view>
 
       <!--++++ANGULAR/IONIC BUNDLE++++ -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>

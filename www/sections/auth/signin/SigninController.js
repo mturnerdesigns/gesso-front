@@ -1,7 +1,7 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('SigninController', function ($scope, $http, $window, $location, $rootScope) {
+    .controller('SigninController', function ($scope, $state, $http, $window, $location, $rootScope) {
       $rootScope.noShow = true;
 	$scope.user = {};
 	$scope.login = function () {
@@ -11,7 +11,7 @@ angular
       .success(function (response) {
       	console.log(response);
         $window.localStorage.token = response.token;
-        $location.path('/dash')
+        $location.path('/tab/dash')
       })
       .error(function (response) {
       	console.log(response);

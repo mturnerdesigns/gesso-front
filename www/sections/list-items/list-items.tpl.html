@@ -1,9 +1,10 @@
-<ion-content class="has-tabs  mainContent">
+<ion-view class="has-tabs  mainContent">
+<ion-content>
 <div class="card" id="list-card-id">
     <ul class="demo-list-icon mdl-list">
     	<li class="mdl-list__item">
 	        <span class="mdl-list__item-primary-content">
-	       	<a class="mdl-list__item-secondary-action" href="/#dash"><i class="ion-chevron-left"></i></a>
+	       	<a class="mdl-list__item-secondary-action" href="/#/tab/dash"><i class="ion-chevron-left"></i></a>
 	        	
 	    	</span>
 	    	<span class="mdl-list__item-secondary-content list-right">
@@ -24,15 +25,15 @@
       <span class="list-item-date">{{ item.reminder_date }}</span>
   </ion-checkbox>
     <span class="edit-icon-list-item">
-        <a class="g-icon" href="#item/{{item.id}}/edit"><i class="ion-edit"></i></a>
+        <a class="g-icon" href="#tab/item/{{item.id}}/edit"><i class="ion-edit"></i></a>
        <!--  <i class="ion-ios-trash g-icon g-delete" data="{{item.id}}" ng-click="deleteCard(item.id)"></i> -->
     </span>
 </ion-list>
-
-
 </ion-content>
-    <a href="#list/{{list.id}}/add">
+<a href="#tab/list/{{list.id}}/add">
         <button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
           <i class="material-icons">add</i>
         </button>
-    </a>
+ </a>
+</ion-view>
+   

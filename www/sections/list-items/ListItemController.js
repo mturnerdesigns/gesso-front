@@ -1,9 +1,9 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ListItemController',  function($scope, $http, $routeParams, $rootScope, $route, ionicToast) {
+    .controller('ListItemController',  function($scope, $state, $http, $stateParams, $rootScope, $route, ionicToast) {
     	$rootScope.noShow = false;
-		$http.get('http://gesso-back.dev/api/cards/'+$routeParams.id+'/details').then(function(data){
+		$http.get('http://gesso-back.dev/api/cards/'+$stateParams.id+'/details').then(function(data){
 		console.log(data.data);
 		$scope.items = data.data.item;
 		$scope.list = data.data;

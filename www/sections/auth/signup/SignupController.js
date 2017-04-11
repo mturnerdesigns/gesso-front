@@ -1,7 +1,7 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('SignupController', function ($scope, $http, $window, $location, $rootScope) {	
+    .controller('SignupController', function ($scope, $http, $state, $window, $location, $rootScope) {	
       $rootScope.noShow = true;
 	$scope.user = {};
 	$scope.register = function () {

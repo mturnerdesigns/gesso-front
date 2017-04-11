@@ -1,9 +1,9 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ListItemAddController', function($scope, $http, $routeParams, $rootScope, $route, $location) {
+    .controller('ListItemAddController', function($scope, $http, $stateParams, $rootScope, $route, $location) {
     	$rootScope.noShow = false;
-		$http.get('http://gesso-back.dev/api/cards/'+$routeParams.id+'/details').then(function(data){
+		$http.get('http://gesso-back.dev/api/cards/'+$stateParams.id+'/details').then(function(data){
 		//console.log(data.data);
 		$scope.items = data.data.item;
 		$scope.list = data.data;
@@ -18,10 +18,11 @@ angular
 
         $scope.newItem = [];
         $scope.addItem = function() {
-            $http.post('http://gesso-back.dev/api/cards/'+$routeParams.id+'/items', $scope.newItem[0],
+            $http.post('http://gesso-back.dev/api/cards/'+$stateParams.id+'/items', $scope.newItem[0],
           { headers: {'X-Requested-With': 'XMLHttpRequest'}})
           .success(function (response) {
             console.log(response);
+            $location.path('/tab/list/'+$stateParams.id);
             $scope.errorMessage = response;
           })
           .error(function (response) {
@@ -40,7 +41,8 @@ angular
           console.log($scope.newItem);
         }
         $scope.cancel = function(){
-          $location.path('/list/'+$routeParams.id);
+          $location.path('tab/list/'+$stateParams.id);
+          $window.location.reload(true);
         }
 	});    	
 

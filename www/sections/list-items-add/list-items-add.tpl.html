@@ -1,45 +1,47 @@
-<ion-content class="has-tabs  mainContent">
-<p class="catName">suggested reminders:</p>
-<div class="list" id="sug-reminders">
-	<label class="item item-input item-select">
-		<div class="input-label fullInput">
-			<i class="ion-cube"></i>
+<ion-view class="has-tabs  mainContent">
+	<ion-content>
+		<p class="catName">suggested reminders:</p>
+		<div class="list" id="sug-reminders">
+			<label class="item item-input item-select">
+				<div class="input-label fullInput">
+					<i class="ion-cube"></i>
+				</div>
+				<select name="mySelect" id="mySelect" value="{{ reminder.selectedOption }}"
+				      data-ng-options="reminder.body for reminder in reminders" ng-change="update(reminder)" data-ng-model="reminder.selectedOption">
+				    	<option value="" selected disabled>Ontario Arts Council Reminders</option>
+				    	<option value="" data-ng-if="!reminders.length">No Reminders this month!</option>
+				</select>
+			</label>
 		</div>
-		<select name="mySelect" id="mySelect" value="{{ reminder.selectedOption }}"
-		      data-ng-options="reminder.body for reminder in reminders" ng-change="update(reminder)" data-ng-model="reminder.selectedOption">
-		    	<option value="" selected disabled>Ontario Arts Council Reminders</option>
-		    	<option value="" data-ng-if="!reminders.length">No Reminders this month!</option>
-		</select>
-	</label>
-</div>
-<form ng-submit="addItem()">
-	<ion-item id="bodyInput">
-		<input id="itemText" type="text" placeholder="Title" data-ng-model="newItem[0].body" class="fullInput">
-		<i id="calender" class="ion-calendar" ng-click="toggle()"></i>
-	</ion-item>
+		<form ng-submit="addItem()">
+			<ion-item id="bodyInput">
+				<input id="itemText" type="text" placeholder="Title" data-ng-model="newItem[0].body" class="fullInput">
+				<i id="calender" class="ion-calendar" ng-click="toggle()"></i>
+			</ion-item>
 
-  	<datepicker data-ng-show="reminderdate" date-format="yyyy-MM-dd">
-			<input data-ng-model="newItem[0].reminder_date" type="text" class="fullInput datePick" placeholder="Add a reminder date" />
-	</datepicker>
-	<div class="hasErrors"><i class="ion-android-hand" ng-if="errorMessage.body[0]" ></i> {{ errorMessage.body[0] }}</div>
-	
-	
-	<!-- <input type="submit"/> -->
-	<div class="edit-div date-add">
-	<button class="button button-positive update-but" ng-click="cancel()">
-	 			 <i class="ion-android-hand"></i> Cancel
-	</button>
-	<button type="submit" class="button button-positive update-but">
-	 			 <i class="ion-checkmark"></i> Add 
-	</button>
-	</div>
-</form>
-<p class="catName">Adding Item To:</p>
-<div id="list-card" class="card main-list">
-		  	<div class="item item-text-wrap">
-		    	<i class="icon ion-record padding" style="color:{{colors[0].color}}">
-		    	</i>
-		    	{{ list.title }}
-		  	</div>
-</div>
-</ion-content> 
+		  	<datepicker data-ng-show="reminderdate" date-format="yyyy-MM-dd">
+					<input data-ng-model="newItem[0].reminder_date" type="text" class="fullInput datePick" placeholder="Add a reminder date" />
+			</datepicker>
+			<div class="hasErrors"><i class="ion-android-hand" ng-if="errorMessage.body[0]" ></i> {{ errorMessage.body[0] }}</div>
+			
+			
+			<!-- <input type="submit"/> -->
+			<div class="edit-div date-add">
+			<button class="button button-positive update-but" ng-click="cancel()">
+			 			 <i class="ion-android-hand"></i> Cancel
+			</button>
+			<button type="submit" class="button button-positive update-but">
+			 			 <i class="ion-checkmark"></i> Add 
+			</button>
+			</div>
+		</form>
+		<p class="catName">Adding Item To:</p>
+		<div id="list-card" class="card main-list">
+				  	<div class="item item-text-wrap">
+				    	<i class="icon ion-record padding" style="color:{{colors[0].color}}">
+				    	</i>
+				    	{{ list.title }}
+				  	</div>
+		</div>
+	</ion-content>
+</ion-view> 

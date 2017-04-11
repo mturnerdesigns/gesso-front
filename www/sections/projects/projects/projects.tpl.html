@@ -18,10 +18,13 @@
             <i class="icon ion-record padding">
             </i>
             <input type="text" placeholder="New Project Name" id="list" name="list" data-ng-model="newProject.name">
-        </div>
+            <label class="hasErrors" ng-if="errorMessage">{{ errorMessage.name[0] }}</label> 
+        </div>     
         <button id="fabmini" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"
         data-ng-click="addProject()">
             <i class="material-icons">add</i>
         </button>
+
     </div>
+
  </ion-content>

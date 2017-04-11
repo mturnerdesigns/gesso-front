@@ -17,11 +17,13 @@ angular
       		$http.post('http://gesso-back.dev/api/projects/post', $scope.newProject,
       		{ headers: {'X-Requested-With': 'XMLHttpRequest'}})
       		.success(function(response){
-      			console.log(response);
-      			$state.reload();
-      		})
-      		.error(function(response){
-      			console.log(response);
+      			if(response.status == 422)
+            {
+              console.log(response);
+              $scope.errorMessage = response.error;
+            } else {
+              $state.reload();
+            }
       		});
       	};
 	});

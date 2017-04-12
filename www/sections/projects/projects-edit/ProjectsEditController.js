@@ -1,10 +1,11 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ProjectsEditController', function($scope, $http, $stateParams, $rootScope, $route, ionicToast, $location) {
+    .controller('ProjectsEditController', function($scope, $http, $stateParams, $rootScope,
+     $route, ionicToast, $location, ApiService) {
     	$rootScope.noShow = false;
 
-    $http.get('http://gesso-back.dev/api/projects/'+$stateParams.id+'/edit').then(function(data){
+    $http.get(ApiService.URL+'projects/'+$stateParams.id+'/edit').then(function(data){
       console.log(data.data);
       $scope.editProject = data.data;
     
@@ -12,7 +13,7 @@ angular
     $scope.color = randomColor({luminosity: 'light'}); 
 
     $scope.updateProject = function(editProject){
-      $http.patch('http://gesso-back.dev/api/projects/'+$stateParams.id+'/update', $scope.editProject,
+      $http.patch(ApiService.URL+'projects/'+$stateParams.id+'/update', $scope.editProject,
       { headers: {'X-Requested-With': 'XMLHttpRequest'}})
       .success(function (response) {
               console.log(response);
@@ -25,7 +26,7 @@ angular
       };
 
     $scope.deleteProject = function() {
-        $http.delete('http://gesso-back.dev/api/projects/'+$stateParams.id+'/delete', $scope.editProject,
+        $http.delete(ApiService.URL+'projects/'+$stateParams.id+'/delete', $scope.editProject,
          { headers: {'X-Requested-With': 'XMLHttpRequest'}})
          .success(function (response) {
             console.log(response);

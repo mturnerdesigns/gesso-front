@@ -1,15 +1,16 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ListItemEditController', function($scope, $http, $stateParams, $rootScope, $state, ionicToast, $location) {
+    .controller('ListItemEditController', function($scope, $http, $stateParams, $rootScope,
+     $state, ionicToast, $location, ApiService) {
     	$rootScope.noShow = false;
-    	$http.get('http://gesso-back.dev/api/items/'+$stateParams.id+'/edit').then(function(data){
+    	$http.get(ApiService.URL+'items/'+$stateParams.id+'/edit').then(function(data){
 		console.log(data.data);
 		$scope.items = data.data;
 
 
 		$scope.updateListItems = function(items){
-			$http.patch('http://gesso-back.dev/api/items/'+$stateParams.id, $scope.items,
+			$http.patch(ApiService.URL+'items/'+$stateParams.id, $scope.items,
 			{ headers: {'X-Requested-With': 'XMLHttpRequest'}})
 			.success(function (response) {
               console.log(response);
@@ -21,7 +22,7 @@ angular
             });
 		};   
         $scope.deleteCardItems = function(items) {
-          $http.delete('http://gesso-back.dev/api/items/'+$stateParams.id+'/delete', $scope.items,
+          $http.delete(ApiService.URL+'items/'+$stateParams.id+'/delete', $scope.items,
            { headers: {'X-Requested-With': 'XMLHttpRequest'}})
            .success(function (response) {
               console.log(response);

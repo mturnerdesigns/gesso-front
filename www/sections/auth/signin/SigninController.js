@@ -1,12 +1,12 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('SigninController', function ($scope, $state, $http, $window, $location, $rootScope) {
+    .controller('SigninController', function ($scope, $state, $http, $window, $location, $rootScope, ApiService) {
       $rootScope.noShow = true;
 	$scope.user = {};
 	$scope.login = function () {
     $http
-      .post('http://gesso-back.dev/api/login', $scope.user,
+      .post(ApiService.URL+'login', $scope.user,
       { headers: {'X-Requested-With': 'XMLHttpRequest'}})
       .success(function (response) {
         if(response.status == 422){

@@ -1,9 +1,10 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ProjectsController', function($scope, $http, $stateParams, $rootScope, $state, ionicToast, $location) {
+    .controller('ProjectsController', function($scope, $http, $stateParams, $rootScope, 
+      $state, ionicToast, $location, ApiService) {
     	$rootScope.noShow = false;
-    	$http.get('http://gesso-back.dev/api/projects').then(function(data){
+    	$http.get(ApiService.URL+'projects').then(function(data){
 		console.log(data.data.projects);
 		$scope.projects = data.data.projects;
 
@@ -14,7 +15,7 @@ angular
 
       	$scope.newProject = {};
       	$scope.addProject = function(){
-      		$http.post('http://gesso-back.dev/api/projects/post', $scope.newProject,
+      		$http.post(ApiService.URL+'projects/post', $scope.newProject,
       		{ headers: {'X-Requested-With': 'XMLHttpRequest'}})
       		.success(function(response){
       			if(response.status == 422)

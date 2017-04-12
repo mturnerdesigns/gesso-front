@@ -1,9 +1,10 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ListItemController',  function($scope, $state, $http, $stateParams, $rootScope, $route, ionicToast) {
+    .controller('ListItemController',  function($scope, $state, $http, $stateParams, 
+      $rootScope, $route, ionicToast, ApiService) {
     	$rootScope.noShow = false;
-		$http.get('http://gesso-back.dev/api/cards/'+$stateParams.id+'/details').then(function(data){
+		$http.get(ApiService.URL+'cards/'+$stateParams.id+'/details').then(function(data){
 		console.log(data.data);
 		$scope.items = data.data.item;
 		$scope.list = data.data;
@@ -13,7 +14,7 @@ angular
 
         
     	$scope.update = function(item) {
-    		$http.patch('http://gesso-back.dev/api/items/'+item.id, {completed: item.completed},
+    		$http.patch(ApiService.URL+'items/'+item.id, {completed: item.completed},
     		//because we are passing the item in the function we dont have to access it through the scope object.	
            	{ headers: {'X-Requested-With': 'XMLHttpRequest'}})
            	.success(function (response) {
@@ -26,7 +27,7 @@ angular
     	};
 
       $scope.deleteCard = function(id) {
-          $http.delete('http://gesso-back.dev/api/items/'+id+'/delete', $scope.item,
+          $http.delete(ApiService.URL+'items/'+id+'/delete', $scope.item,
            { headers: {'X-Requested-With': 'XMLHttpRequest'}})
            .success(function (response) {
               console.log(response);

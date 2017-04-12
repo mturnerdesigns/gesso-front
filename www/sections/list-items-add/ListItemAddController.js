@@ -2,9 +2,9 @@
 angular
     .module('app.core')
     .controller('ListItemAddController', function($scope, $http, $stateParams,
-       $rootScope, $route, $location, ionicToast, $window) {
+       $rootScope, $route, $location, ionicToast, $window, ApiService) {
     	$rootScope.noShow = false;
-		$http.get('http://gesso-back.dev/api/cards/'+$stateParams.id+'/details').then(function(data){
+		$http.get(ApiService.URL+'cards/'+$stateParams.id+'/details').then(function(data){
 		//console.log(data.data);
 		$scope.items = data.data.item;
 		$scope.list = data.data;
@@ -19,7 +19,7 @@ angular
 
         $scope.newItem = [];
         $scope.addItem = function() {
-            $http.post('http://gesso-back.dev/api/cards/'+$stateParams.id+'/items', $scope.newItem[0],
+            $http.post(ApiService.URL+'cards/'+$stateParams.id+'/items', $scope.newItem[0],
           { headers: {'X-Requested-With': 'XMLHttpRequest'}})
           .success(function (response) {
             console.log(response);
@@ -32,7 +32,7 @@ angular
           });
         };
 
-        $http.get('http://gesso-back.dev/api/suggested-reminders').then(function(data){
+        $http.get(ApiService.URL+'suggested-reminders').then(function(data){
           console.log(data.data);
           $scope.reminders = data.data.reminders;
         });

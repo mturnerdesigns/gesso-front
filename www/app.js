@@ -9,7 +9,8 @@ angular
       'ngSanitize', 
       'ngStorage',
       '720kb.datepicker', 
-      'ionic-toast'
+      'ionic-toast',
+      'ngFileUpload',
       ])
 
 

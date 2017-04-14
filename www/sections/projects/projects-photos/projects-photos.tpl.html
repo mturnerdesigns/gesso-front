@@ -20,8 +20,10 @@
     </div>
 
 </ion-content>
-    <a href="#/tab/projects/{{ project.id }}/add">
+   <!--  <a href="#/tab/projects/{{ project.id }}/add">
         <button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
           <i class="material-icons">add</i>
         </button>
-    </a>
+    </a> -->
+
+    <button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="file" ngf-select="uploadFiles($file)" accept="image/*"> <i class="ion-ios-upload-outline" style="font-size: 35px;"></i></button>

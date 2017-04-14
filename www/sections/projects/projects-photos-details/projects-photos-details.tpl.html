@@ -1,4 +1,18 @@
 <ion-content class="mainContent has-tabs">
+<div class="card" id="list-card-id">
+    <ul class="demo-list-icon mdl-list">
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            <a class="mdl-list__item-secondary-action" href="/#/tab/projects/{{ projectDetails.id }}/photos"><i class="ion-chevron-left"></i></a>
+                
+            </span>
+            <span class="mdl-list__item-secondary-content list-right">
+                <i class="icon ion-record padding mdl-list__item-icon" style="color:{{colors[0].color}}"></i>
+                  <span class="list-title">{{ projectDetails.name }}</span>
+            </span>
+        </li>
+     </ul>
+</div>
 <div class="card">
   <div class="item item-text-wrap">
     <img id="full" ng-src="{{ imageURL }}{{ photoDetails.original_uri }}" style="width:100%;" 

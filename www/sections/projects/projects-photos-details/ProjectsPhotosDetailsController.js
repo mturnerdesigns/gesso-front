@@ -24,6 +24,16 @@ angular
 	            	console.log(response);
 	          	});
   			};
+
+       $http.get(ApiService.URL+'projects/'+photoProject+'/details').then(function(data){
+          console.log(data.data);
+          $scope.projectDetails = data.data;
+
+            $scope.colors = [];       
+            $scope.colors.push({ color: randomColor({luminosity: 'light'}) });
+       
+        });
+
   		});
   		
   	$ionicModal.fromTemplateUrl('fullscreen.html', function (modal) {

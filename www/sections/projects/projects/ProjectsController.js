@@ -5,8 +5,8 @@ angular
       $state, ionicToast, $location, ApiService) {
     	$rootScope.noShow = false;
     	$http.get(ApiService.URL+'projects').then(function(data){
-		console.log(data.data.projects);
-		$scope.projects = data.data.projects;
+    		console.log(data.data.projects);
+    		$scope.projects = data.data.projects;
 
 		$scope.colors = [];
         for( var i = 0; i<data.data.projects.length; i++){          

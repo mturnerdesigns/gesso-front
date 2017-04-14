@@ -1,8 +1,8 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('ProjectsPhotosController', function($scope, $http, $stateParams, $rootScope,
-     $route, ionicToast, $location, ApiService) {
+    .controller('ProjectsPhotosController', function($scope, $state, $http, $stateParams, $rootScope,
+        ionicToast, $location, ApiService, Upload) {
     	$rootScope.noShow = false;
         $scope.imageURL = ApiService.URLimage;
 
@@ -15,5 +15,22 @@ angular
 	$scope.colors = [];       
         $scope.colors.push({ color: randomColor({luminosity: 'light'}) });
 
+    $scope.uploadFiles = function(file) {
+        if (file) {
+            file.upload = Upload.upload({
+                url: ApiService.URL+'project/'+$stateParams.id+'/photos/post',
+                data: {file: file}
+            })
+            .success(function(response){
+                console.log(response);
+                if(response.status == 422){
+                    console.log(response);
+                    $scope.showToast = ionicToast.show(response.error.file, 'middle', false, 2500);
+                } else {
+                    $state.reload();
+                }
+            })
+        }   
+    }
 
 });

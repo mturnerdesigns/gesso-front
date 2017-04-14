@@ -21,7 +21,7 @@ angular
             .success(function(response){
               if(response.status == 422)
                { 
-                $scope.errorMessage = response.error;
+                $scope.showToast = ionicToast.show(response.error.title[0], 'middle', false, 2500);
                } else {
                 $state.reload();
                }

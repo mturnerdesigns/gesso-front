@@ -80,7 +80,7 @@ function config($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-         .state('tab.project', {
+        .state('tab.project', {
             url:'/projects',
             views: {
                 'project-tab': {
@@ -124,6 +124,24 @@ function config($stateProvider, $urlRouterProvider) {
                    controller: 'ProjectsPhotosAddController'
                 }
             }
+        })
+        .state('tab.portfolio', {
+            url:'/portfolios',
+            views: {
+                'portfolio-tab': {
+                    templateUrl: 'sections/portfolios/portfolios/portfolios.tpl.html',
+                    controller: 'PortfoliosController'
+                }
+            }    
+        })
+        .state('tab.portfolio-edit', {
+            url:'/portfolios/:id/edit',
+            views: {
+                'portfolio-tab': {
+                    templateUrl: 'sections/portfolios/portfolios-edit/portfolios-edit.tpl.html',
+                    controller: 'PortfoliosEditController'
+                }
+            }    
         });
         $urlRouterProvider.otherwise('/');
 }

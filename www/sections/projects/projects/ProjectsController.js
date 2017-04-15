@@ -10,7 +10,7 @@ angular
 
 		$scope.colors = [];
         for( var i = 0; i<data.data.projects.length; i++){          
-          $scope.colors.push({ color: randomColor({luminosity: 'light'}) })
+          $scope.colors.push({ color: randomColor({hue: 'blue'}) })
       	};
 
       	$scope.newProject = {};

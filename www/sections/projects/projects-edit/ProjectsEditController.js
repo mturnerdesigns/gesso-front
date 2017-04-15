@@ -10,7 +10,7 @@ angular
       $scope.editProject = data.data;
     
 
-    $scope.color = randomColor({luminosity: 'light'}); 
+    $scope.color = randomColor({ hue: 'blue'}); 
 
     $scope.updateProject = function(editProject){
       $http.patch(ApiService.URL+'projects/'+$stateParams.id+'/update', $scope.editProject,

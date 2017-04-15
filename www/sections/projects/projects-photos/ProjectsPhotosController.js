@@ -13,7 +13,7 @@ angular
 	});
 
 	$scope.colors = [];       
-        $scope.colors.push({ color: randomColor({luminosity: 'light'}) });
+        $scope.colors.push({ color: randomColor({ hue: 'blue'}) });
 
     $scope.uploadFiles = function(file) {
         if (file) {

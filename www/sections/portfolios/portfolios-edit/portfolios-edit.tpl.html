@@ -1,0 +1,19 @@
+<ion-content class="mainContent has-tabs">
+ <p>{{ showToast }}</p>
+    <a href="#/tab/portfolios"><i class="ion-chevron-left margin-left"> Back</i></a>
+    <div role="form" class="card main-list list-card">
+        <div class="item item-text-wrap">
+            <i class="icon ion-record padding" style="color:{{color}}">
+            </i>
+            <input class="list-card-edit" type="text" id="project" name="title" data-ng-model="editPortfolio.name">
+        </div>
+    </div>
+    <div class="edit-div">
+        <button class="button button-positive update-but" data-ng-click="deletePortfolio()">
+                 <i class="ion-ios-trash"></i> Delete
+        </button>
+        <button class="button button-positive update-but" data-ng-click="updatePortfolio()">
+                 <i class="ion-checkmark"></i> Update 
+        </button>
+    </div>
+</ion-content>

@@ -116,15 +116,6 @@ function config($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state('tab.projects-photos-add', {
-            url:'/projects/:id/add',
-            views: {
-                'project-tab':{
-                   templateUrl: 'sections/projects/projects-photos-add/projects-photos-add.tpl.html',
-                   controller: 'ProjectsPhotosAddController'
-                }
-            }
-        })
         .state('tab.portfolio', {
             url:'/portfolios',
             views: {
@@ -142,6 +133,33 @@ function config($stateProvider, $urlRouterProvider) {
                     controller: 'PortfoliosEditController'
                 }
             }    
+        })
+        .state('tab.portfolio-details', {
+            url:'/portfolios/:id/details',
+            views: {
+                'portfolio-tab':{
+                    templateUrl: 'sections/portfolios/portfolios-details/portfolios-details.tpl.html',
+                    controller: 'PortfoliosDetailsController'
+                }
+            }
+        })
+        .state('tab.portfolio-details-info', {
+            url:'/portfolio-photo/:id/info',
+            views: {
+                'portfolio-tab':{
+                    templateUrl: 'sections/portfolios/portfolios-details-info/portfolios-details-info.tpl.html',
+                    controller: 'PortfoliosDetailsInfoController'
+                }
+            }
+        })
+        .state('tab.portfolios-details-info-add', {
+            url:'/portfolios/:id/add',
+            views: {
+                'portfolio-tab':{
+                   templateUrl: 'sections/portfolios/portfolios-details-info-add/portfolios-details-info-add.tpl.html',
+                   controller: 'PortfoliosDetailsInfoAddController'
+                }
+            }
         });
         $urlRouterProvider.otherwise('/');
 }

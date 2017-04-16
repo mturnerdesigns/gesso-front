@@ -1,0 +1,25 @@
+<ion-content class="mainContent has-tabs">
+    <form>
+    <label for="file">Photo:</label>
+    <input type="file" ngf-select data-ng-model="file" name="file"    
+             accept="image/*">
+    <img ng-show="file" ngf-thumbnail="file" class="thumb">
+    <button ng-click="file = null" ng-show="file">Remove</button>
+    <hr>
+    <label for="title">Title:</label>
+    <input type="text" name="title" data-ng-model="form.title">
+    <hr>
+     <label for="medium">Medium:</label>
+    <input type="text" name="medium" data-ng-model="form.medium">
+    <hr>
+     <label for="dimensions">Dimensions:</label>
+    <input type="text" name="dimensions" data-ng-model="form.dimensions">
+    <hr>
+     <label for="location">Location:</label>
+    <input type="text" name="location" data-ng-model="form.location">
+    <hr>
+     <label for="price">Price:</label>
+    <input type="text" name="price" ng-model="form.price">
+        <button ng-click="uploadForm(file)">Submit</button>
+    </form>
+</ion-content>

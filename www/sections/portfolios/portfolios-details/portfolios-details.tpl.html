@@ -1,0 +1,24 @@
+<ion-content class="mainContent has-tabs">
+<div class="card" id="list-card-id">
+    <ul class="demo-list-icon mdl-list">
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            <a class="mdl-list__item-secondary-action" href="#/tab/portfolios"><i class="ion-chevron-left"></i></a>
+                
+            </span>
+            <span class="mdl-list__item-secondary-content list-right">
+                <i class="icon ion-record padding mdl-list__item-icon" style="color:{{colors[0].color}}"></i>
+                  <span class="list-title">{{ portfolio.name }}</span>
+            </span>
+        </li>
+     </ul>
+</div>
+    <div class="col col-50" ng-repeat="portfolio in portfolioPhotos" style="float:left;">
+        <a ng-href="#/tab/portfolio-photo/{{ portfolio.id }}/info"><img ng-src="{{ imageURL }}{{ portfolio.thumbnail_p_uri }}" class="thumbStyle" alt="reference photos"></a> 
+    </div>
+</ion-content>
+    <a href="#/tab/portfolios/{{ portfolio.id }}/add">
+        <button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+    </a>

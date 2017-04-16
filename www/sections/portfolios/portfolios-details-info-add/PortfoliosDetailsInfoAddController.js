@@ -16,6 +16,7 @@ angular
                     console.log(response);
                     $scope.showToast = ionicToast.show(response.error.file, 'middle', false, 2500);
                 } else {
+                	$scope.showToast = ionicToast.show('New Work Added!', 'bottom', false, 2500);
                     $location.path('/tab/portfolios/'+$stateParams.id+'/details');
                 }
             })

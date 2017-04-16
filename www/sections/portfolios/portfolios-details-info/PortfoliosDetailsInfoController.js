@@ -20,7 +20,7 @@ angular
             .success(function (response) {
                 console.log(response);
                 $location.path('/tab/portfolios/'+photoPortfolio+'/details');
-                $scope.showToast = ionicToast.show(response.message, 'bottom', false, 2500);
+                $scope.showToast = ionicToast.show('Work deleted!', 'bottom', false, 2500);
               })
                 .error(function (response) {
                 console.log(response);

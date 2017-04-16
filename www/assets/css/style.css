@@ -209,3 +209,11 @@ box-shadow: 0 2px 7px 0 rgba(21,72,155,0.34);
 .spacing-project-list {
 	padding: 0px;
 }
+
+.thumb {
+    width: 200px;
+    height: 200px;
+    float: none;
+    position: relative;
+    top: 7px;
+}

@@ -1,25 +1,48 @@
 <ion-content class="mainContent has-tabs">
-    <form>
-    <label for="file">Photo:</label>
-    <input type="file" ngf-select data-ng-model="file" name="file"    
-             accept="image/*">
-    <img ng-show="file" ngf-thumbnail="file" class="thumb">
-    <button ng-click="file = null" ng-show="file">Remove</button>
-    <hr>
-    <label for="title">Title:</label>
-    <input type="text" name="title" data-ng-model="form.title">
-    <hr>
-     <label for="medium">Medium:</label>
-    <input type="text" name="medium" data-ng-model="form.medium">
-    <hr>
-     <label for="dimensions">Dimensions:</label>
-    <input type="text" name="dimensions" data-ng-model="form.dimensions">
-    <hr>
-     <label for="location">Location:</label>
-    <input type="text" name="location" data-ng-model="form.location">
-    <hr>
-     <label for="price">Price:</label>
-    <input type="text" name="price" ng-model="form.price">
-        <button ng-click="uploadForm(file)">Submit</button>
-    </form>
+    <p class="catName">Upload a new work</p>
+    <div class="card">
+        <form>
+        <p class="catName small">Select An Image:</p>
+        <label id="edited">
+            <input type="file" ngf-select data-ng-model="file" name="file" accept="image/*">
+        </label>
+        <div id="thumbImage">
+            <label class="input-label" ng-if="file">
+                <span><i class="ion-image"> Current Image:</i></span>
+                <img ng-show="file" ngf-thumbnail="file" class="thumb" alt="current selected photo">
+            </label>
+            <button class="button button-positive update-but" ng-click="file = null" ng-show="file">
+            <i class="ion-refresh"></i> Remove</button>
+        </div>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Title:</span>
+            <input placeholder="Title" type="text" name="title" data-ng-model="form.title">
+        </label>
+         <label class="item item-input item-floating-label">
+            <span class="input-label">Medium</span>
+            <input placeholder="Medium" type="text" name="medium" data-ng-model="form.medium">
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Dimensions</span>
+            <input placeholder="Dimensions" type="text" name="dimensions" data-ng-model="form.dimensions">
+        </label>
+         <label class="item item-input item-floating-label">
+            <span class="input-label">Location</span>
+            <input placeholder="Location" type="text" name="location" data-ng-model="form.location">
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Price</span>
+            <input placeholder="Price" type="text" name="price" ng-model="form.price">
+        </label>
+            <div class="edit-div date-add">
+                <button class="button button-positive update-but" ng-click="cancel()">
+                    <i class="ion-android-hand"></i> Cancel
+                </button>
+                <button class="button button-positive update-but" ng-click="uploadForm(file)">
+                    <i class="ion-checkmark"></i> Add
+                </button>
+            </div>
+            
+        </form>
+    </div>
 </ion-content>

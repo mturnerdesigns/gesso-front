@@ -1,0 +1,50 @@
+<ion-content class="has-tabs mainContent">
+<div class="card" id="list-card-id">
+    <ul class="demo-list-icon mdl-list">
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            <a class="mdl-list__item-secondary-action" href="#/tab/portfolios/{{ portfolioPhotoDetails.portfolio_id }}/details">
+                <i class="ion-chevron-left"></i>
+            </a>
+                
+            </span>
+            <span class="mdl-list__item-secondary-content list-right">
+                <i class="icon ion-record padding mdl-list__item-icon" style="color:{{colors[0].color}}"></i>
+                  <span class="list-title">{{ portfolioDetails.name }}</span>
+            </span>
+        </li>
+     </ul>
+</div>
+<div class="card">
+  <div class="item item-text-wrap">
+    <img id="full" ng-src="{{ imageURL }}{{ portfolioPhotoDetails.original_p_uri }}" style="width:100%;" 
+    ng-click="openfullscreen()">
+  </div>
+</div>
+<div class="card">
+  <div class="item item-text-wrap">
+    <h4>Title: <span>{{ notes.title }}</span></h4>
+    <h4>Medium: <span>{{ notes.medium }}</span></h4>
+    <h4>Dimensions: <span>{{ notes.dimensions }}</span></h4>
+    <h4>Location: <span>{{ notes.location }}</span></h4>
+    <h4>Price: <span>{{ notes.price }}</span></h4>
+    
+  </div>
+</div>
+    <div class="edit-div date-add">
+    <button class="button button-positive update-but" ng-click="delete()">
+                 <i class="ion-ios-trash"></i> Delete
+    </button>
+    <button class="button button-positive update-but" ng-click="update()">
+                 <i class="ion-checkmark"></i> update
+    </button>
+    </div>
+</ion-content>
+
+<script id="fullscreen.html" type="text/ng-template">
+    <div class="modal" ng-click="closefullscreen()">
+    <ion-content>
+    <img ng-src="{{ imageURL }}{{ portfolioPhotoDetails.original_p_uri }}" id="fullPhoto"/>
+    </ion-content>
+    </div>
+</script>

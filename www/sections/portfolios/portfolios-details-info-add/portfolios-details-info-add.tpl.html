@@ -1,5 +1,15 @@
 <ion-content class="mainContent has-tabs">
-    <p class="catName">Upload a new work</p>
+<p class="catName">Upload a new work to:</p>
+<div class="card" id="list-card-id">
+        <ul class="demo-list-icon mdl-list">
+            <li class="mdl-list__item">
+                <span class="mdl-list__item-secondary-content list-right">
+                    <i class="icon ion-record padding mdl-list__item-icon" style="color:{{colors[0].color}}"></i>
+                      <span class="list-title">{{ portfolioDetails.name }}</span>
+                </span>
+            </li>
+         </ul>
+    </div>
     <div class="card">
         <form>
         <p class="catName small">Select An Image:</p>
@@ -7,7 +17,7 @@
             <input type="file" ngf-select data-ng-model="file" name="file" accept="image/*">
         </label>
         <div id="thumbImage">
-            <label class="input-label" ng-if="file">
+            <label ng-if="file">
                 <!-- <span><i class="ion-image"> Image:</i></span> -->
                 <img ng-show="file" ngf-thumbnail="file" class="thumb" alt="current selected photo">
             </label>
@@ -42,7 +52,6 @@
                     <i class="ion-checkmark"></i> Add
                 </button>
             </div>
-            
         </form>
     </div>
 </ion-content>

@@ -220,7 +220,6 @@ box-shadow: 0 2px 7px 0 rgba(21,72,155,0.34);
 
 #thumbImage {
 	text-align: center;
-	margin-top: 40px;
 }
 
 #thumbImage img {
@@ -237,7 +236,7 @@ box-shadow: 0 2px 7px 0 rgba(21,72,155,0.34);
 	cursor: pointer;
 	height: 100px;
 	display: block;
-	margin-top: 40px;
+	margin: 20px;
 }
 
 #edited input[type="file"] {

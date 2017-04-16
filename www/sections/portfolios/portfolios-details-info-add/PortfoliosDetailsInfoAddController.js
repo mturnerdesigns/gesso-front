@@ -21,6 +21,14 @@ angular
                 }
             })
     	}
+    	$http.get(ApiService.URL+'portfolios/'+$stateParams.id+'/details').then(function(data){
+          console.log(data.data);
+          $scope.portfolioDetails = data.data;
+
+            $scope.colors = [];       
+            $scope.colors.push({ color: randomColor({ hue: 'pink' }) });
+       
+        });
 
     	$scope.cancel = function() {
     		$location.path('/tab/portfolios/'+$stateParams.id+'/details');

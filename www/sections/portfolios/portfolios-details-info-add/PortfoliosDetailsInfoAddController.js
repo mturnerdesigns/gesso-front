@@ -21,4 +21,8 @@ angular
             })
     	}
 
+    	$scope.cancel = function() {
+    		$location.path('/tab/portfolios/'+$stateParams.id+'/details');
+    	}
+
 });
